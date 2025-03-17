@@ -9,6 +9,8 @@ let akdY = hossz - hossz / 5;
 let akd = hossz / 5;
 let v = 3;
 let jatekVege = false;
+let akadaly= new Akadaly (hossz-hossz/5,hossz-hossz/5,hossz/5, 3)
+let akadaly2= new Akadaly (hossz-2*hossz/5,hossz-hossz/5,hossz/5, 6)
 
 function setup() {
   createCanvas(hossz, hossz);
@@ -18,6 +20,11 @@ function setup() {
 }
 
 function draw() {
+  akadaly.rajzol();
+  akadaly.mozgat();
+  akadaly2.rajzol();
+  akadaly2.mozgat();
+
   if (jatekVege) {
     background("red");
     textSize(30);
@@ -52,7 +59,6 @@ function mousePressed() {
 
 function utkozes() {
   let bal = korX - sugar / 2;
-  console.log(bal)
   let jobb = korX + sugar / 2;
   let felso = korY - sugar / 2;
   let also = korY + sugar / 2;
