@@ -95,3 +95,4 @@ function holVagyunk(kar, akd) {
     return "kivul";
   }
 }
+//talaj beállításra függvény 
