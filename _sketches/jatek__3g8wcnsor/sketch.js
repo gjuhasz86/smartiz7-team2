@@ -4,12 +4,7 @@ let ugrasiMagassag = 120;
 let hossz = 400;
 let jatekVege = false;
 let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
-let akadaly2 = new Akadaly(
-  hossz - (2 * hossz) / 5,
-  hossz - hossz / 5,
-  hossz / 5,
-  6
-);
+let akadaly2 = new Akadaly(1.5 *hossz, hossz - hossz / 5, hossz / 5, 2);
 let karakter = new Karakter(hossz / 2, hossz - 25, 50);
 
 function setup() {
@@ -22,18 +17,15 @@ function draw() {
     //background("red");
     textSize(30);
     fill("black");
-    text("Játék vége!", width / 3.5, height / 1.8);
+    text("Játék vége!", hossz/ 3.5, hossz / 1.8);
     return;
   }
   background(220);
   akadaly.mozgat();
   akadaly.rajzol();
 
-  // akadaly2.rajzol();
-  // akadaly2.mozgat();
-
-  // rect(akdX, akdY, akd, akd);
-  // akdX -= v;
+  akadaly2.mozgat();
+  akadaly2.rajzol();
 
   if (ugrik) {
     karakter.korY -= 5;
@@ -44,6 +36,15 @@ function draw() {
     karakter.korY += 5;
   }
   karakter.rajzol();
+   let pozicio2 = holVagyunk(karakter, akadaly2);
+  if (pozicio2 == "rajta") {
+    eredetiY = akadaly2.akdY - karakter.atmero / 2;
+  } else if (pozicio2 == "benne") {
+    jatekVege = true;
+  } else {
+    eredetiY = hossz - karakter.atmero / 2;
+  }
+  
   let pozicio = holVagyunk(karakter, akadaly);
   if (pozicio == "rajta") {
     eredetiY = akadaly.akdY - karakter.atmero / 2;
@@ -52,7 +53,7 @@ function draw() {
   } else {
     eredetiY = hossz - karakter.atmero / 2;
   }
-  console.log(pozicio);
+  console.log(akadaly,akadaly2,karakter,pozicio, pozicio2);
 }
 
 function mousePressed() {
@@ -62,7 +63,7 @@ function mousePressed() {
 }
 // kör paraméterei, akadály paraméterei, ütközött e vagy nem return,
 function utkozes(kar, akd) {
-  console.log(akd, kar);
+  //console.log(akd, kar);
   if (
     kar.jobbOldal() > akd.akdX &&
     kar.balOldal() < akd.akdX + akd.akd &&
