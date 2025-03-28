@@ -1,5 +1,3 @@
-let korX, korY;
-let atmero = 50;
 let eredetiY;
 let ugrik = false;
 let ugrasiMagassag = 120;
@@ -12,16 +10,14 @@ let akadaly2 = new Akadaly(
   hossz / 5,
   6
 );
+let karakter = new Karakter(hossz / 2, hossz - 25, 50);
 
 function setup() {
   createCanvas(hossz, hossz);
-  korX = width / 2;
-  korY = height - atmero / 2;
-  eredetiY = korY;
+  eredetiY = karakter.korY;
 }
 
 function draw() {
-
   if (jatekVege) {
     //background("red");
     textSize(30);
@@ -32,83 +28,69 @@ function draw() {
   background(220);
   akadaly.mozgat();
   akadaly.rajzol();
-  
+
   // akadaly2.rajzol();
   // akadaly2.mozgat();
-  
+
   // rect(akdX, akdY, akd, akd);
   // akdX -= v;
 
-  
   if (ugrik) {
-    korY -= 5;
-    if (korY <= eredetiY - ugrasiMagassag) {
+    karakter.korY -= 5;
+    if (karakter.korY <= eredetiY - ugrasiMagassag) {
       ugrik = false;
     }
-  } else if (korY < eredetiY) {
-    korY += 5;
+  } else if (karakter.korY < eredetiY) {
+    karakter.korY += 5;
   }
-  circle(korX, korY, atmero);
-  rect(korX-atmero/2, korY-atmero/2,atmero,atmero);
-  let pozicio = holVagyunk(korX, korY, atmero, akadaly)
-  if (pozicio=="rajta"){
-    eredetiY=akadaly.akdY-atmero/2
+  karakter.rajzol();
+  let pozicio = holVagyunk(karakter, akadaly);
+  if (pozicio == "rajta") {
+    eredetiY = akadaly.akdY - karakter.atmero / 2;
+  } else if (pozicio == "benne") {
+    jatekVege = true;
+  } else {
+    eredetiY = hossz - karakter.atmero / 2;
   }
-  else if(pozicio=="benne"){
-          jatekVege= true
-          }
-  else{
-    eredetiY= height- atmero/2
-  }
-   console.log(pozicio)
-  //   utkozes(
-  //     korX - atmero / 2,
-  //     korX + atmero / 2,
-  //     korY - atmero / 2,
-  //     korY + atmero / 2,
-  //     akadaly
-  //   );
-  //   utkozes(akadaly2);
+  console.log(pozicio);
 }
 
 function mousePressed() {
-  if (korY >= eredetiY) {
+  if (karakter.korY >= eredetiY) {
     ugrik = true;
   }
 }
 // kör paraméterei, akadály paraméterei, ütközött e vagy nem return,
-function utkozes(bal, jobb, felso, also, akd) {
-  console.log(akd,bal,jobb,felso,also);
+function utkozes(kar, akd) {
+  console.log(akd, kar);
   if (
-    jobb > akd.akdX &&
-    bal < akd.akdX + akd.akd &&
-    also > akd.akdY &&
-    felso < akd.akdY + akd.akd
+    kar.jobbOldal() > akd.akdX &&
+    kar.balOldal() < akd.akdX + akd.akd &&
+    kar.also() > akd.akdY &&
+    kar.felso() < akd.akdY + akd.akd
   ) {
     return true;
   } else {
     return false;
   }
 }
-function rajta(bal,jobb, also, akd) {
-  if (also <= akd.akdY + 5 && jobb >= akd.akdX && bal <= akd.akdX + akd.akd) {
+function rajta(kar, akd) {
+  if (
+    kar.also() <= akd.akdY + 5 &&
+    kar.jobbOldal() >= akd.akdX &&
+    kar.balOldal() <= akd.akdX + akd.akd
+  ) {
     return true;
   } else {
     return false;
   }
 }
-function holVagyunk(korX, korY, atmero, akd) {
-  let bal = korX - atmero / 2;
-  let jobb = korX + atmero / 2;
-  let also = korY + atmero / 2;
-  let felso = korY - atmero / 2;
-  if (rajta(bal,jobb, also, akd) == true) {
+function holVagyunk(kar, akd) {
+  if (rajta(kar, akd) == true) {
     return "rajta";
-  } else if (utkozes(bal, jobb, felso, also, akd) == true) {
+  } else if (utkozes(kar, akd) == true) {
     return "benne";
   } else {
     return "kivul";
   }
 }
-
-
