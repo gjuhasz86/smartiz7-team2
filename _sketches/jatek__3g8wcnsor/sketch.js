@@ -37,24 +37,6 @@ function draw() {
   }
   karakter.rajzol();
   talaj(karakter, akadaly, akadaly2);
-  /* let pozicio2 = holVagyunk(karakter, akadaly2);
-  if (pozicio2 == "rajta") {
-    eredetiY = akadaly2.akdY - karakter.atmero / 2;
-  } else if (pozicio2 == "benne") {
-    jatekVege = true;
-  } else {
-    eredetiY = hossz - karakter.atmero / 2;
-  }
-  
-  let pozicio = holVagyunk(karakter, akadaly);
-  if (pozicio == "rajta") {
-    eredetiY = akadaly.akdY - karakter.atmero / 2;
-  } else if (pozicio == "benne") {
-    jatekVege = true;
-  } else {
-    eredetiY = hossz - karakter.atmero / 2;
-  }*/
-  // console.log(akadaly,akadaly2,karakter,pozicio, pozicio2);
 }
 
 function mousePressed() {
