@@ -4,7 +4,7 @@ let ugrasiMagassag = 120;
 let hossz = 400;
 let jatekVege = false;
 let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
-let akadaly2 = new Akadaly(1.5 *hossz, hossz - hossz / 5, hossz / 5, 2);
+let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 5, hossz / 5, 2);
 let karakter = new Karakter(hossz / 2, hossz - 25, 50);
 
 function setup() {
@@ -17,7 +17,7 @@ function draw() {
     //background("red");
     textSize(30);
     fill("black");
-    text("Játék vége!", hossz/ 3.5, hossz / 1.8);
+    text("Játék vége!", hossz / 3.5, hossz / 1.8);
     return;
   }
   background(220);
@@ -36,7 +36,7 @@ function draw() {
     karakter.korY += 5;
   }
   karakter.rajzol();
-  talaj(karakter,akadaly,akadaly2)
+  talaj(karakter, akadaly, akadaly2);
   /* let pozicio2 = holVagyunk(karakter, akadaly2);
   if (pozicio2 == "rajta") {
     eredetiY = akadaly2.akdY - karakter.atmero / 2;
@@ -54,7 +54,7 @@ function draw() {
   } else {
     eredetiY = hossz - karakter.atmero / 2;
   }*/
- // console.log(akadaly,akadaly2,karakter,pozicio, pozicio2);
+  // console.log(akadaly,akadaly2,karakter,pozicio, pozicio2);
 }
 
 function mousePressed() {
@@ -76,7 +76,7 @@ function utkozes(kar, akd) {
     return false;
   }
 }
-function rajta(kar, akd,akd2) {
+function rajta(kar, akd) {
   if (
     kar.also() <= akd.akdY + 5 &&
     kar.jobbOldal() >= akd.akdX &&
@@ -87,29 +87,25 @@ function rajta(kar, akd,akd2) {
     return false;
   }
 }
-function holVagyunk(kar, akd,akd2) {
-  if (rajta(kar, akd,akd2) == true) {
+function holVagyunk(kar, akd) {
+  if (rajta(kar, akd) == true) {
     return "rajta";
-  } else if (utkozes(kar, akd,akd2) == true) {
+  } else if (utkozes(kar, akd) == true) {
     return "benne";
   } else {
     return "kivul";
   }
 }
-function talaj(kar,akd,akd2){
-  let rajtaVanE = false
-  if (holVagyunk(kar, akd,akd2) == "rajta"){
-     rajtaVanE = true
-  }else if (holVagyunk(kar, akd, akd2) == "benne") {
-    jatekVege = true;
-  }else{
-    rajtaVanE = false
+function talaj(kar, akd, akd2) {
+  let rajtaVanE = false;
+  if (holVagyunk(kar, akd) == "rajta") {
+    rajtaVanE = true;
+  } else if (holVagyunk(kar, akd2) == "rajta") {
+    rajtaVanE = true;
   }
-  if (rajtaVanE == true){
+  if (rajtaVanE == true) {
     eredetiY = akadaly.akdY - karakter.atmero / 2;
-    eredetiY = akadaly2.akdY - karakter.atmero / 2;
-  }else{
-   eredetiY = hossz - karakter.atmero / 2; 
+  } else {
+    eredetiY = hossz - karakter.atmero / 2;
   }
 }
-//talaj beállításra függvény 
