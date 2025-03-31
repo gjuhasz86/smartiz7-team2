@@ -37,8 +37,7 @@ function draw() {
   }
   karakter.rajzol();
   talaj(karakter, akadaly, akadaly2);
-  vegeVanE(karakter,akadaly,akadaly2)
-
+  vegeVanE(karakter, akadaly, akadaly2);
 }
 
 function mousePressed() {
@@ -94,7 +93,7 @@ function talaj(kar, akd, akd2) {
   }
 }
 
-function vegeVanE(kar,akd,akd2){
+function vegeVanE(kar, akd, akd2) {
   if (holVagyunk(kar, akd) == "benne") {
     jatekVege = true;
   } else if (holVagyunk(kar, akd2) == "benne") {
