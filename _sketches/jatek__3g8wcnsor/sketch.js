@@ -36,7 +36,8 @@ function draw() {
     karakter.korY += 5;
   }
   karakter.rajzol();
-   let pozicio2 = holVagyunk(karakter, akadaly2);
+  talaj(karakter,akadaly,akadaly2)
+  /* let pozicio2 = holVagyunk(karakter, akadaly2);
   if (pozicio2 == "rajta") {
     eredetiY = akadaly2.akdY - karakter.atmero / 2;
   } else if (pozicio2 == "benne") {
@@ -52,8 +53,8 @@ function draw() {
     jatekVege = true;
   } else {
     eredetiY = hossz - karakter.atmero / 2;
-  }
-  console.log(akadaly,akadaly2,karakter,pozicio, pozicio2);
+  }*/
+ // console.log(akadaly,akadaly2,karakter,pozicio, pozicio2);
 }
 
 function mousePressed() {
@@ -75,7 +76,7 @@ function utkozes(kar, akd) {
     return false;
   }
 }
-function rajta(kar, akd) {
+function rajta(kar, akd,akd2) {
   if (
     kar.also() <= akd.akdY + 5 &&
     kar.jobbOldal() >= akd.akdX &&
@@ -86,13 +87,29 @@ function rajta(kar, akd) {
     return false;
   }
 }
-function holVagyunk(kar, akd) {
-  if (rajta(kar, akd) == true) {
+function holVagyunk(kar, akd,akd2) {
+  if (rajta(kar, akd,akd2) == true) {
     return "rajta";
-  } else if (utkozes(kar, akd) == true) {
+  } else if (utkozes(kar, akd,akd2) == true) {
     return "benne";
   } else {
     return "kivul";
+  }
+}
+function talaj(kar,akd,akd2){
+  let rajtaVanE = false
+  if (holVagyunk(kar, akd,akd2) == "rajta"){
+     rajtaVanE = true
+  }else if (holVagyunk(kar, akd, akd2) == "benne") {
+    jatekVege = true;
+  }else{
+    rajtaVanE = false
+  }
+  if (rajtaVanE == true){
+    eredetiY = akadaly.akdY - karakter.atmero / 2;
+    eredetiY = akadaly2.akdY - karakter.atmero / 2;
+  }else{
+   eredetiY = hossz - karakter.atmero / 2; 
   }
 }
 //talaj beállításra függvény 
