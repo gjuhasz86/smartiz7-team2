@@ -4,7 +4,7 @@ let ugrasiMagassag = 120;
 let hossz = 400;
 let jatekVege = false;
 let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
-let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 5, hossz / 5, 2);
+let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
 let karakter = new Karakter(hossz / 2, hossz - 25, 50);
 
 function setup() {
@@ -82,13 +82,14 @@ function holVagyunk(kar, akd) {
 function talaj(kar, akd, akd2) {
   let rajtaVanE = false;
   if (holVagyunk(kar, akd) == "rajta") {
-    rajtaVanE = true;
-  } else if (holVagyunk(kar, akd2) == "rajta") {
+    eredetiY = akd.akdY - kar.atmero / 2;
     rajtaVanE = true;
   }
-  if (rajtaVanE == true) {
-    eredetiY = akadaly.akdY - karakter.atmero / 2;
-  } else {
+  if (holVagyunk(kar, akd2) == "rajta") {
+    eredetiY = akd2.akdY - kar.atmero / 2;
+    rajtaVanE = true;
+  }
+  if (rajtaVanE == false) {
     eredetiY = hossz - karakter.atmero / 2;
   }
 }
