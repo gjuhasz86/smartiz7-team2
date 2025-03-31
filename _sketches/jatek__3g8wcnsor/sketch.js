@@ -3,9 +3,15 @@ let ugrik = false;
 let ugrasiMagassag = 120;
 let hossz = 400;
 let jatekVege = false;
-let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
-let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
+//let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
+//let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
 let karakter = new Karakter(hossz / 2, hossz - 25, 50);
+let palya = [
+  new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2),
+  new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2),
+  new Akadaly(2 * hossz, hossz - hossz / 10, hossz / 10, 2),
+  new Akadaly(2.5 * hossz, hossz - hossz / 10, hossz / 10, 2),
+];
 
 function setup() {
   createCanvas(hossz, hossz);
@@ -21,11 +27,10 @@ function draw() {
     return;
   }
   background(220);
-  akadaly.mozgat();
-  akadaly.rajzol();
-
-  akadaly2.mozgat();
-  akadaly2.rajzol();
+  for (let i = 0; i < palya.length; i = i + 1) {
+    palya[i].mozgat();
+    palya[i].rajzol();
+  }
 
   if (ugrik) {
     karakter.korY -= 5;
@@ -36,8 +41,8 @@ function draw() {
     karakter.korY += 5;
   }
   karakter.rajzol();
-  talaj(karakter, akadaly, akadaly2);
-  vegeVanE(karakter, akadaly, akadaly2);
+  talaj(karakter, palya);
+  vegeVanE(karakter, palya);
 }
 
 function mousePressed() {
@@ -79,25 +84,23 @@ function holVagyunk(kar, akd) {
     return "kivul";
   }
 }
-function talaj(kar, akd, akd2) {
+function talaj(kar, paly) {
   let rajtaVanE = false;
-  if (holVagyunk(kar, akd) == "rajta") {
-    eredetiY = akd.akdY - kar.atmero / 2;
-    rajtaVanE = true;
-  }
-  if (holVagyunk(kar, akd2) == "rajta") {
-    eredetiY = akd2.akdY - kar.atmero / 2;
-    rajtaVanE = true;
+  for (let i = 0; i < paly.length; i = i + 1) {
+    if (holVagyunk(kar, paly[i]) == "rajta") {
+      eredetiY = paly[i].akdY - kar.atmero / 2;
+      rajtaVanE = true;
+    }
   }
   if (rajtaVanE == false) {
     eredetiY = hossz - karakter.atmero / 2;
   }
 }
 
-function vegeVanE(kar, akd, akd2) {
-  if (holVagyunk(kar, akd) == "benne") {
-    jatekVege = true;
-  } else if (holVagyunk(kar, akd2) == "benne") {
-    jatekVege = true;
+function vegeVanE(kar, paly) {
+  for (let i = 0; i < paly.length; i = i + 1) {
+    if (holVagyunk(kar, paly[i]) == "benne") {
+      jatekVege = true;
+    }
   }
 }
