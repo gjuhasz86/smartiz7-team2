@@ -1,6 +1,7 @@
 let eredetiY;
 let ugrik = false;
 let ugrasiMagassag = 120;
+
 let hossz = 400;
 let jatekVege = false;
 //let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
