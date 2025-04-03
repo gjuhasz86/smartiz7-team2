@@ -1,11 +1,8 @@
 let eredetiY;
 let ugrik = false;
 let ugrasiMagassag = 120;
-
 let hossz = 400;
 let jatekVege = false;
-//let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
-//let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
 let karakter = new Karakter(hossz / 2, hossz - 25, 50);
 let palya = [
   new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2),
@@ -44,6 +41,10 @@ function draw() {
   karakter.rajzol();
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
+  if(karakter.korY < 255 ){
+    jatekVege= true
+  }
+  console.log( holVagyunk)
 }
 
 function mousePressed() {
@@ -53,7 +54,7 @@ function mousePressed() {
 }
 // kör paraméterei, akadály paraméterei, ütközött e vagy nem return,
 function utkozes(kar, akd) {
-  //console.log(akd, kar);
+  console.log(akd, kar);
   if (
     kar.jobbOldal() > akd.akdX &&
     kar.balOldal() < akd.akdX + akd.akd &&
@@ -77,6 +78,7 @@ function rajta(kar, akd) {
   }
 }
 function holVagyunk(kar, akd) {
+  
   if (rajta(kar, akd) == true) {
     return "rajta";
   } else if (utkozes(kar, akd) == true) {
@@ -84,6 +86,7 @@ function holVagyunk(kar, akd) {
   } else {
     return "kivul";
   }
+     console.log()
 }
 function talaj(kar, paly) {
   let rajtaVanE = false;
