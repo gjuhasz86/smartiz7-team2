@@ -3,13 +3,11 @@ let ugrik = false;
 let ugrasiMagassag = 120;
 let hossz = 400;
 let jatekVege = false;
-//let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
-//let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
 let karakter = new Karakter(hossz / 2, hossz - 25, 50);
 let palya = [
-  new Akadaly(1.1 * hossz, hossz - hossz / 10, hossz / 10, 1),
-   new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 1),
-//  new Akadaly(2 * hossz, hossz - hossz / 10, hossz / 10, 2),
+  new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 1),
+  new Akadaly(1.1 * hossz, hossz - hossz / 10, hossz / 10, 1)
+  //new Akadaly(2 * hossz, hossz - hossz / 10, hossz / 10, 2),
   //new Akadaly(2.5 * hossz, hossz - hossz / 10, hossz / 10, 2),
 ];
 
