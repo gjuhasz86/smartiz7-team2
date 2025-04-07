@@ -7,9 +7,9 @@ let jatekVege = false;
 //let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
 let karakter = new Karakter(hossz / 2, hossz - 25, 50);
 let palya = [
-   new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 1),
-   new Akadaly(1.1 * hossz, hossz - hossz / 10, hossz / 10, 1),
-//  new Akadaly(2 * hossz, hossz - hossz / 10, hossz / 10, 2),
+  new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 1),
+  new Akadaly(1.1 * hossz, hossz - hossz / 10, hossz / 10, 1),
+  //  new Akadaly(2 * hossz, hossz - hossz / 10, hossz / 10, 2),
   //new Akadaly(2.5 * hossz, hossz - hossz / 10, hossz / 10, 2),
 ];
 
@@ -26,14 +26,13 @@ function draw() {
     text("Játék vége!", hossz / 3.5, hossz / 1.8);
     return;
   }
-  if (palya[0].akdX == 240){
-    ugrik=true;
+  if (palya[0].akdX == 240) {
+    ugrik = true;
   }
   background(220);
   for (let i = 0; i < palya.length; i = i + 1) {
     palya[i].mozgat();
     palya[i].rajzol();
- 
   }
   if (ugrik) {
     karakter.korY -= 5;
@@ -46,7 +45,13 @@ function draw() {
   karakter.rajzol();
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
-  console.log(karakter, holVagyunk(karakter, palya[0]), palya[0], holVagyunk(karakter, palya[1]),palya[1])
+  console.log(
+    karakter,
+    holVagyunk(karakter, palya[0]),
+    palya[0],
+    holVagyunk(karakter, palya[1]),
+    palya[1]
+  );
 }
 
 function mousePressed() {
@@ -72,7 +77,8 @@ function rajta(kar, akd) {
   if (
     kar.also() <= akd.akdY + 5 &&
     kar.jobbOldal() >= akd.akdX &&
-    kar.balOldal() <= akd.akdX + akd.akd && ugrik== false
+    kar.balOldal() <= akd.akdX + akd.akd &&
+    ugrik == false
   ) {
     return true;
   } else {
@@ -90,16 +96,23 @@ function holVagyunk(kar, akd) {
 }
 function talaj(kar, paly) {
   let rajtaVanE = false;
+  let max = 0
   for (let i = 0; i < paly.length; i = i + 1) {
     if (holVagyunk(kar, paly[i]) == "rajta") {
-      eredetiY = paly[i].akdY - kar.atmero / 2;
-      rajtaVanE = true;
+      if (max < paly[i].akdY) {
+        max = paly[i].akdY;
+      } else {
+        max = max;
+      }
     }
   }
+  eredetiY = max - kar.atmero / 2;
+  rajtaVanE = true;
+
   if (rajtaVanE == false) {
     eredetiY = hossz - karakter.atmero / 2;
   }
-  console.log( rajtaVanE, eredetiY)
+  console.log(rajtaVanE, eredetiY);
 }
 
 function vegeVanE(kar, paly) {
