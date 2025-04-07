@@ -45,10 +45,10 @@ function draw() {
   karakter.rajzol();
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
-  console.log(
-    karakter,
-    holVagyunk(karakter, palya[0]),
-    palya[0],
+//  console.log(
+   // karakter,
+    //holVagyunk(karakter, palya[0]),
+   // palya[0],
     holVagyunk(karakter, palya[1]),
     palya[1]
   );
@@ -112,7 +112,7 @@ function talaj(kar, paly) {
   if (rajtaVanE == false) {
     eredetiY = hossz - karakter.atmero / 2;
   }
-  console.log(rajtaVanE, eredetiY);
+  //console.log(rajtaVanE, eredetiY);
 }
 
 function vegeVanE(kar, paly) {
