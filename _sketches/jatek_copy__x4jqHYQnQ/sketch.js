@@ -118,12 +118,12 @@ function talaj(kar, paly) {
   if (rajtaVanE == false) {
     eredetiY = hossz - karakter.atmero / 2;
   }
-  console.log(
-    rajtaVanE,
-    eredetiY,
-    karakter.korY,
-    holVagyunk(karakter, palya[0])
-  );
+ // console.log(
+   // rajtaVanE,
+    //eredetiY,
+   // karakter.korY,
+    //holVagyunk(karakter, palya[0])
+  //);
 }
 
 function vegeVanE(kar, paly) {
