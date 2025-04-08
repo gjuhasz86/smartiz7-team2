@@ -1,22 +1,22 @@
+let hossz = 400;
 let eredetiY;
 let ugrik = false;
-let ugrasiMagassag = 120;
+let ugrasiMagassag = hossz/3.3;
 let ugrasiV = 0;
-let g = 0.2;
-let hossz = 400;
+let g = hossz/ 2000;
 let jatekVege = false;
 //let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
 //let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
-let karakter = new Karakter(hossz / 2, hossz - 25, 50);
+let karakter = new Karakter(hossz / 2, hossz - hossz/16 , hossz/8);
 let palya = [
-  new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 3, 1),
-  new Akadaly(1.1 * hossz, hossz - hossz / 10, hossz / 10, 1),
+  new Akadaly(0.8 , 0.8, 0.4, 0.005),
+  new Akadaly(1.1 , 0.9 , 0.2, 0.005),
   //  new Akadaly(2 * hossz, hossz - hossz / 10, hossz / 10, 2),
   //new Akadaly(2.5 * hossz, hossz - hossz / 10, hossz / 10, 2),
 ];
 
 function setup() {
-  createCanvas(hossz, hossz);
+  createCanvas(1.5*hossz, hossz);
   eredetiY = karakter.korY;
 }
 

@@ -1,8 +1,8 @@
 class Karakter {
   constructor(korX, korY, atmero) {
-    this.korX = korX;
-    this.korY = korY;
-    this.atmero = atmero;
+    this.korX = korX
+    this.korY = korY
+    this.atmero = atmero
   }
   rajzol() {
     rect(

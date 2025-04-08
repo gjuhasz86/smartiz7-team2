@@ -1,10 +1,10 @@
 // Akadály osztály
 class Akadaly {
   constructor(akdX, akdY, akd, v) {
-    this.akdX = akdX;
-    this.akdY = akdY;
-    this.akd = akd;
-    this.v = v;
+    this.akdX = akdX*hossz;
+    this.akdY = akdY*hossz;
+    this.akd = akd*hossz;
+    this.v = v*hossz;
   }
 
   rajzol() {
