@@ -45,13 +45,13 @@ function draw() {
   karakter.rajzol();
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
-  console.log(
-   karakter,
-   holVagyunk(karakter, palya[0]),
-   palya[0],
-   holVagyunk(karakter, palya[1]),
-   palya[1]
-  );
+ // console.log(
+  //  karakter,
+   // holVagyunk(karakter, palya[0]),
+  //  palya[0],
+  //  holVagyunk(karakter, palya[1]),
+  //  palya[1]
+//  );
 }
 
 function mousePressed() {
@@ -96,17 +96,17 @@ function holVagyunk(kar, akd) {
 }
 function talaj(kar, paly) {
   let rajtaVanE = false;
-  let max = 0
+  let min = hossz ;
   for (let i = 0; i < paly.length; i = i + 1) {
     if (holVagyunk(kar, paly[i]) == "rajta") {
-      if (max < paly[i].akdY) {
-        max = paly[i].akdY;
+      if (min < paly[i].akdY) {
+        min = min;
       } else {
-        max = max;
+        min = paly[i].akdY;
       }
     }
   }
-  eredetiY = max - kar.atmero / 2;
+  eredetiY = min - kar.atmero / 2;
   rajtaVanE = true;
 
   if (rajtaVanE == false) {
