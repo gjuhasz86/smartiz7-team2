@@ -1,13 +1,15 @@
 let eredetiY;
 let ugrik = false;
 let ugrasiMagassag = 120;
+let ugrasiV = 0;
+let g = 0.2;
 let hossz = 400;
 let jatekVege = false;
 //let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
 //let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
 let karakter = new Karakter(hossz / 2, hossz - 25, 50);
 let palya = [
-  new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 1),
+  new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 3, 1),
   new Akadaly(1.1 * hossz, hossz - hossz / 10, hossz / 10, 1),
   //  new Akadaly(2 * hossz, hossz - hossz / 10, hossz / 10, 2),
   //new Akadaly(2.5 * hossz, hossz - hossz / 10, hossz / 10, 2),
@@ -35,8 +37,11 @@ function draw() {
     palya[i].rajzol();
   }
   if (ugrik) {
-    karakter.korY -= 5;
-    if (karakter.korY <= eredetiY - ugrasiMagassag) {
+    karakter.korY += ugrasiV;
+    ugrasiV += g;
+    if (karakter.korY >= eredetiY) {
+      karakter.korY = eredetiY;
+      ugrasiV = 0;
       ugrik = false;
     }
   } else if (karakter.korY < eredetiY) {
@@ -45,18 +50,19 @@ function draw() {
   karakter.rajzol();
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
- // console.log(
+  // console.log(
   //  karakter,
-   // holVagyunk(karakter, palya[0]),
+  // holVagyunk(karakter, palya[0]),
   //  palya[0],
   //  holVagyunk(karakter, palya[1]),
   //  palya[1]
-//  );
+  //  );
 }
 
 function mousePressed() {
   if (karakter.korY >= eredetiY) {
     ugrik = true;
+    ugrasiV = -Math.sqrt(2 * g * ugrasiMagassag);
   }
 }
 // kör paraméterei, akadály paraméterei, ütközött e vagy nem return,
@@ -77,8 +83,8 @@ function rajta(kar, akd) {
   if (
     kar.also() <= akd.akdY + 5 &&
     kar.jobbOldal() >= akd.akdX &&
-    kar.balOldal() <= akd.akdX + akd.akd &&
-    ugrik == false
+    kar.balOldal() <= akd.akdX + akd.akd
+    //  && ugrik == false
   ) {
     return true;
   } else {
@@ -96,9 +102,10 @@ function holVagyunk(kar, akd) {
 }
 function talaj(kar, paly) {
   let rajtaVanE = false;
-  let min = hossz ;
+  let min = hossz;
   for (let i = 0; i < paly.length; i = i + 1) {
     if (holVagyunk(kar, paly[i]) == "rajta") {
+      rajtaVanE = true;
       if (min < paly[i].akdY) {
         min = min;
       } else {
@@ -107,12 +114,16 @@ function talaj(kar, paly) {
     }
   }
   eredetiY = min - kar.atmero / 2;
-  rajtaVanE = true;
 
   if (rajtaVanE == false) {
     eredetiY = hossz - karakter.atmero / 2;
   }
-  console.log(rajtaVanE, eredetiY);
+  console.log(
+    rajtaVanE,
+    eredetiY,
+    karakter.korY,
+    holVagyunk(karakter, palya[0])
+  );
 }
 
 function vegeVanE(kar, paly) {
