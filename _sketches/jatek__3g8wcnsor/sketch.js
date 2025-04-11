@@ -5,9 +5,11 @@ let ugrasiMagassag = hossz/3.3;
 let ugrasiV = 0;
 let g = hossz/ 2000;
 let jatekVege = false;
-let karakter = new Karakter(hossz / 2, hossz - hossz/16 , hossz/8);
+//let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
+//let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
+let karakter = new Karakter(hossz / 3, hossz - hossz/16 , hossz/8);
 let palya = [
- new Akadaly(0.8 , 0.8, 0.2, 0.005),
+  new Akadaly(0.8 , 0.8, 0.2, 0.005),
   new Akadaly(1.1 , 0.7 , 0.3, 0.005),
   new Akadaly(1.5 , 0.8, 0.2, 0.005),
   new Akadaly(1.8, 0.7 , 0.3, 0.005),
@@ -64,45 +66,14 @@ function mousePressed() {
   }
 }
 // kör paraméterei, akadály paraméterei, ütközött e vagy nem return,
-function utkozes(kar, akd) {
-  //console.log(akd, kar);
-  if (
-    kar.jobbOldal() > akd.akdX &&
-    kar.balOldal() < akd.akdX + akd.akd &&
-    kar.also() > akd.akdY &&
-    kar.felso() < akd.akdY + akd.akd
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-function rajta(kar, akd) {
-  if (
-    kar.also() <= akd.akdY + 5 &&
-    kar.jobbOldal() >= akd.akdX &&
-    kar.balOldal() <= akd.akdX + akd.akd
-    //  && ugrik == false
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-function holVagyunk(kar, akd) {
-  if (rajta(kar, akd) == true) {
-    return "rajta";
-  } else if (utkozes(kar, akd) == true) {
-    return "benne";
-  } else {
-    return "kivul";
-  }
-}
+
+
+
 function talaj(kar, paly) {
   let rajtaVanE = false;
   let min = hossz;
   for (let i = 0; i < paly.length; i = i + 1) {
-    if (holVagyunk(kar, paly[i]) == "rajta") {
+    if (palya[i].holVagyunk(kar, paly[i]) == "rajta") {
       rajtaVanE = true;
       if (min < paly[i].akdY) {
         min = min;
@@ -116,7 +87,7 @@ function talaj(kar, paly) {
   if (rajtaVanE == false) {
     eredetiY = hossz - karakter.atmero / 2;
   }
-  // console.log(
+ // console.log(
    // rajtaVanE,
     //eredetiY,
    // karakter.korY,
@@ -126,8 +97,10 @@ function talaj(kar, paly) {
 
 function vegeVanE(kar, paly) {
   for (let i = 0; i < paly.length; i = i + 1) {
-    if (holVagyunk(kar, paly[i]) == "benne") {
+    if (palya[i].holVagyunk(kar, paly[i]) == "benne") {
       jatekVege = true;
     }
   }
 }
+// 48 115
+// az utkozes es a kar-akd az akadalyon belul
