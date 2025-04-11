@@ -95,7 +95,7 @@ function talaj(kar, paly) {
 
 function vegeVanE(kar, paly) {
   for (let i = 0; i < paly.length; i = i + 1) {
-    if (paly[i].holVagyunk(kar, paly[i]) == "benne") {
+    if (paly[i].holVagyunk(kar) == "benne") {
       jatekVege = true;
     }
   }
