@@ -1,14 +1,15 @@
 // Akadály osztály
 class Akadaly {
-  constructor(akdX, akdY, akd, v) {
+  constructor(akdX, akdY, akdW, akdH, v) {
     this.akdX = akdX*hossz;
     this.akdY = akdY*hossz;
-    this.akd = akd*hossz;
+    this.akdW = akdW*hossz;
+    this.akdH = akdH*hossz
     this.v = v*hossz;
   }
 
   rajzol() {
-    rect(this.akdX, this.akdY, this.akd, this.akd);
+    rect(this.akdX, this.akdY, this.akdW, this.akdH);
   }
 
   mozgat() {
@@ -18,9 +19,9 @@ class Akadaly {
   //console.log(akd, kar);
   if (
     kar.jobbOldal() > this.akdX &&
-    kar.balOldal() < this.akdX + this.akd &&
+    kar.balOldal() < this.akdX + this.akdW &&
     kar.also() > this.akdY &&
-    kar.felso() < this.akdY + this.akd
+    kar.felso() < this.akdY + this.akdH
   ) {
     return true;
   } else {
@@ -31,7 +32,7 @@ class Akadaly {
   if (
     kar.also() <= this.akdY + 5 &&
     kar.jobbOldal() >= this.akdX &&
-    kar.balOldal() <= this.akdX + this.akd
+    kar.balOldal() <= this.akdX + this.akdW
     //  && ugrik == false
   ) {
     return true;
