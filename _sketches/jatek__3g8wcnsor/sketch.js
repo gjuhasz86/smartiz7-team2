@@ -73,7 +73,7 @@ function talaj(kar, paly) {
   let rajtaVanE = false;
   let min = hossz;
   for (let i = 0; i < paly.length; i = i + 1) {
-    if (palya[i].holVagyunk(kar, paly[i]) == "rajta") {
+    if (paly[i].holVagyunk(kar) == "rajta") {
       rajtaVanE = true;
       if (min < paly[i].akdY) {
         min = min;
@@ -97,7 +97,7 @@ function talaj(kar, paly) {
 
 function vegeVanE(kar, paly) {
   for (let i = 0; i < paly.length; i = i + 1) {
-    if (palya[i].holVagyunk(kar, paly[i]) == "benne") {
+    if (paly[i].holVagyunk(kar) == "benne") {
       jatekVege = true;
     }
   }
