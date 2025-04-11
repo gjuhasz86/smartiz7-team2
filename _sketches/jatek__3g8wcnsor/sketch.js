@@ -8,9 +8,9 @@ let jatekVege = false;
 let karakter = new Karakter(hossz / 3, hossz - hossz / 16, hossz / 8);
 let palya = [
   new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(1.1, 0.7, 0.3,0.2, 0.005),
-  new Akadaly(1.5, 0.8, 0.2,0.2, 0.005),
-  new Akadaly(1.8, 0.7, 0.3,0.3, 0.005),
+  new Akadaly(1.1, 0.7, 0.3, 0.2, 0.005),
+  new Akadaly(1.5, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(1.8, 0.7, 0.3, 0.3, 0.005),
 ];
 
 function setup() {

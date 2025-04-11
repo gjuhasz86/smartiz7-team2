@@ -9,13 +9,14 @@ class Akadaly {
   }
 
   rajzol() {
-    rect(this.akdX, this.akdY, this.akdW, this.akdH, this.akd);
+    rect(this.akdX, this.akdY, this.akdW, this.akdH);
   }
 
   mozgat() {
     this.akdX -= this.v;
   }
   utkozes(kar) {
+    //console.log(akd, kar);
     if (
       kar.jobbOldal() > this.akdX &&
       kar.balOldal() < this.akdX + this.akdW &&

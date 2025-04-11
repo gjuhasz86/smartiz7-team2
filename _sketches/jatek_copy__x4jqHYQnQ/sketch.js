@@ -5,11 +5,9 @@ let ugrasiMagassag = hossz / 3.3;
 let ugrasiV = 0;
 let g = hossz / 2000;
 let jatekVege = false;
-//let akadaly = new Akadaly(hossz - hossz / 5, hossz - hossz / 5, hossz / 5, 2);
-//let akadaly2 = new Akadaly(1.5 * hossz, hossz - hossz / 10, hossz / 10, 2);
 let karakter = new Karakter(hossz / 3, hossz - hossz / 16, hossz / 8);
 let palya = [
-  new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(0.8, 0.4, 0.1, 0.2, 0.005),
   new Akadaly(1.1, 0.7, 0.3, 0.2, 0.005),
   new Akadaly(1.5, 0.8, 0.2, 0.2, 0.005),
   new Akadaly(1.8, 0.7, 0.3, 0.3, 0.005),
