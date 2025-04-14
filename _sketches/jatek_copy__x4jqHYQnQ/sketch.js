@@ -6,31 +6,36 @@ let ugrasiV = 0;
 let g = hossz / 2000;
 let jatekVege = false;
 let karakter = new Karakter(hossz / 3, hossz - hossz / 16, hossz / 8);
-let palya = [
+let palya0 = [
   new Akadaly(0.8, 0.4, 0.1, 0.2, 0.005),
   new Akadaly(1.1, 0.7, 0.3, 0.2, 0.005),
   new Akadaly(1.5, 0.8, 0.2, 0.2, 0.005),
   // new Akadaly(1.8, 0.7, 0.3, 0.3, 0.005),
+  ]
   //X Y a b
-  new Akadaly(2.3, 0.9, 0.4, 0.1, 0.005),
+let palya1= [new Akadaly(2.3, 0.9, 0.4, 0.1, 0.005),
   new Akadaly(2.6, 0.8, 0.4, 0.4, 0.005),
   new Akadaly(3, 0.6, 0.5, 0.5, 0.005),
   new Akadaly(3.2, 0, 0.3, 0.4, 0.005),
   new Akadaly(3.9, 0.5, 0.5, 0.1, 0.005),
-  new Akadaly(3.5, 0.8, 0.3, 0.2, 0.005),
+  new Akadaly(3.5, 0.8, 0.3, 0.2, 0.005),]
+              
   //
+let palya2 =  [ 
   new Akadaly(4.5, 0.5, 0.2, 0.2, 0.005),
   new Akadaly(5.3, 0, 0.2, 0.35, 0.005),
   new Akadaly(5.3, 0.55, 0.45, 0.45, 0.005),
-  new Akadaly(5.05, 0.8, 0.3, 0.2, 0.005),
+  new Akadaly(5.0, 0.8, 0.3, 0.2, 0.005),
   new Akadaly(5.75, 0.3, 0.25, 0.7, 0.005),
   new Akadaly(5.75, 0, 0.2, 0.1, 0.005),
+    ]
   //
+  let palya3= [
   new Akadaly(6.8, 0.7, 0.2, 0.3, 0.005),
   new Akadaly(6.8, 0.0, 0.2, 0.56, 0.005),
-  new Akadaly(7, 0.8, 0.4, 0.2, 0.005),
+  new Akadaly(7, 0.8, 0.4, 0.2, 0.005)]
   //
-  new Akadaly(7.4, 0.5, 0.2, 0.5, 0.005),
+let palya4 = [ new Akadaly(7.4, 0.5, 0.2, 0.5, 0.005),
   new Akadaly(7.8, 0.5, 0.2, 0.5, 0.005),
   new Akadaly(8.3, 0.7, 0.2, 0.3, 0.005),
   new Akadaly(8.6, 0.15, 0.3, 0.3, 0.005),
@@ -41,9 +46,14 @@ let palya = [
   new Akadaly(9.95, 0.5, 0.2, 0.5, 0.005),
 ];
 
+let palyak=[palya1, palya2]
+let palya=[]
+
 function setup() {
   createCanvas(1.5 * hossz, hossz);
   eredetiY = karakter.korY;
+  
+  palya = random(palyak)
 }
 
 function draw() {
@@ -53,6 +63,11 @@ function draw() {
     fill("black");
     text("Játék vége!", hossz / 3.5, hossz / 1.8);
     return;
+  }
+  let valasztas=random(palyak)
+  for(let i= 0, ){
+//      palya = push.random(palyak[])
+   
   }
   if (palya[0].akdX == 240) {
     ugrik = true;

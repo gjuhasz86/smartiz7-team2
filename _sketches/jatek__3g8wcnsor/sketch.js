@@ -14,7 +14,26 @@ function preload() {
   akadalyKep = loadImage("akadaly.png");
 }
 
-let palya = [
+let palya1 = [
+  new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(1.1, 0.6, 0.2, 0.2, 0.005),
+  new Akadaly(1.4, 0.4, 0.2, 0.2, 0.005),
+  new Akadaly(1.7, 0.8, 0.5, 0.2, 0.005),
+  new Akadaly(2.0, 0.4, 0.5, 0.2, 0.005),
+  new Akadaly(2.7, 0.8, 0.3, 0.2, 0.005),
+
+]
+let palya2 = [
+  new Akadaly(1.0, 0.8, 0.3, 0.2, 0.005),
+  new Akadaly(1.4, 0.6, 0.2, 0.3, 0.005),
+  new Akadaly(1.9, 0.6, 0.4, 0.2, 0.005),
+  new Akadaly(2.5, 0.4, 0.3, 0.3, 0.005),
+  new Akadaly(3.0, 0.8, 0.2, 0.2, 0.005),
+]
+let palyak = [palya1,palya2]
+let palya = [] 
+
+let főpalya = [
   new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
   new Akadaly(1.1, 0.6, 0.2, 0.2, 0.005),
   new Akadaly(1.4, 0.4, 0.2, 0.2, 0.005),
@@ -140,8 +159,12 @@ let palya = [
 function setup() {
   createCanvas(1.5 * hossz, hossz);
   karakter = new Karakter(hossz / 3, hossz - hossz / 16, hossz / 8);
-  eredetiY = karakter.korY;
+  eredetiY = karakter.korY; 
+  let valasztas = random(palyak)
+  for(let i =0;i<valasztas.length;i += i){
+  palya.push(valasztas[i])}
 }
+
 
 function draw() {
   if (jatekVege) {
@@ -150,6 +173,9 @@ function draw() {
     text("Játék vége!", hossz / 3.5, hossz / 1.8);
     return;
   }
+  if (palya[palya.length-1].akdX<1.5*hossz){
+    palya = random(palyak)
+  } 
   if (palya[0].akdX == 240) {
     ugrik = true;
   }
