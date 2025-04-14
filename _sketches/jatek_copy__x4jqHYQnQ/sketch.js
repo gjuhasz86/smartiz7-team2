@@ -52,8 +52,13 @@ let palya=[]
 function setup() {
   createCanvas(1.5 * hossz, hossz);
   eredetiY = karakter.korY;
+  //palya = random(palyak)
   
-  palya = random(palyak)
+    let valasztas=random(palyak)
+  for(let i= 0, i<valasztas.length, i= i+1){
+     palya.push.(valasztas[i]);
+   
+  }
 }
 
 function draw() {
@@ -64,11 +69,7 @@ function draw() {
     text("Játék vége!", hossz / 3.5, hossz / 1.8);
     return;
   }
-  let valasztas=random(palyak)
-  for(let i= 0, i<valasztas.lenth, i= i+1){
-//      palya push.random(palyak[])
-   
-  }
+
   if (palya[0].akdX == 240) {
     ugrik = true;
   }
