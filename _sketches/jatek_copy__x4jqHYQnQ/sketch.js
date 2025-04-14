@@ -13,8 +13,9 @@ let palya = [
  // new Akadaly(1.8, 0.7, 0.3, 0.3, 0.005),
   //X Y a b
   new Akadaly(2.3, 0.9, 0.4, 0.1, 0.005),
-  new Akadaly(2.5, 0.8, 0.5, 0.4, 0.005),
-  new Akadaly(3, 0.6, 0.5, 0.4, 0.005),
+  new Akadaly(2.6, 0.8, 0.4, 0.4, 0.005),
+  new Akadaly(3, 0.6, 0.5, 0.5, 0.005),
+  new Akadaly(3.2, 0, 0.3, 0.4, 0.005),
   new Akadaly(3.5, 0.8, 0.3, 0.2, 0.005),
 ];
 

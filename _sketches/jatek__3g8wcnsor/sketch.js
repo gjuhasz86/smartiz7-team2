@@ -19,6 +19,7 @@ let palya = [
   new Akadaly(0.8, 0.0, 0.2, 0.56, 0.005),
   new Akadaly(1.0, 0.8, 0.4, 0.2, 0.005),
    new Akadaly(1.4, 0.5, 0.2, 0.5, 0.005),
+  new Akadaly(1.7, 0.5, 0.2, 0.5, 0.005),
  ]
 
 function setup() {
