@@ -21,17 +21,16 @@ let palya1 = [
   new Akadaly(1.7, 0.8, 0.5, 0.2, 0.005),
   new Akadaly(2.0, 0.4, 0.5, 0.2, 0.005),
   new Akadaly(2.7, 0.8, 0.3, 0.2, 0.005),
-
-]
+];
 let palya2 = [
   new Akadaly(1.0, 0.8, 0.3, 0.2, 0.005),
   new Akadaly(1.4, 0.6, 0.2, 0.3, 0.005),
   new Akadaly(1.9, 0.6, 0.4, 0.2, 0.005),
   new Akadaly(2.5, 0.4, 0.3, 0.3, 0.005),
   new Akadaly(3.0, 0.8, 0.2, 0.2, 0.005),
-]
-let palyak = [palya1,palya2]
-let palya = [] 
+];
+let palyak = [palya1, palya2];
+let palya = [];
 
 let főpalya = [
   new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
@@ -159,12 +158,9 @@ let főpalya = [
 function setup() {
   createCanvas(1.5 * hossz, hossz);
   karakter = new Karakter(hossz / 3, hossz - hossz / 16, hossz / 8);
-  eredetiY = karakter.korY; 
-  let valasztas = random(palyak)
-  for(let i =0;i<valasztas.length;i += i){
-  palya.push(valasztas[i])}
+  eredetiY = karakter.korY;
+  palyaGeneral();
 }
-
 
 function draw() {
   if (jatekVege) {
@@ -173,9 +169,9 @@ function draw() {
     text("Játék vége!", hossz / 3.5, hossz / 1.8);
     return;
   }
-  if (palya[palya.length-1].akdX<1.5*hossz){
-    palya = random(palyak)
-  } 
+  if (palya[palya.length - 1].akdX < 1.5 * hossz) {
+    palyaGeneral();
+  }
   if (palya[0].akdX == 240) {
     ugrik = true;
   }
@@ -199,7 +195,12 @@ function draw() {
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
 }
-
+function palyaGeneral() {
+  let valasztas = random(palyak);
+  for (let i = 0; i < valasztas.length; i = i + 1) {
+    palya.push(valasztas[i]);
+  }
+}
 function mousePressed() {
   if (karakter.korY >= eredetiY) {
     ugrik = true;

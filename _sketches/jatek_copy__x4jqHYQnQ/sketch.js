@@ -65,8 +65,8 @@ function draw() {
     return;
   }
   let valasztas=random(palyak)
-  for(let i= 0, ){
-//      palya = push.random(palyak[])
+  for(let i= 0, i<valasztas.lenth, i= i+1){
+//      palya push.random(palyak[])
    
   }
   if (palya[0].akdX == 240) {
