@@ -5,12 +5,7 @@ class Karakter {
     this.atmero = atmero;
   }
   rajzol() {
-    rect(
-      this.korX - this.atmero / 2,
-      this.korY - this.atmero / 2,
-      this.atmero,
-      this.atmero
-    );
+ image(karakterKep, this.korX - this.atmero / 2, this.korY - this.atmero / 2, this.atmero, this.atmero);
   }
   balOldal() {
     return this.korX - this.atmero / 2;
