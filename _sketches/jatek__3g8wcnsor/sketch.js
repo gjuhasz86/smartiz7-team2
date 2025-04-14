@@ -7,10 +7,31 @@ let g = hossz / 2000;
 let jatekVege = false;
 let karakter = new Karakter(hossz / 3, hossz - hossz / 16, hossz / 8);
 let palya = [
-  new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(1.1, 0.7, 0.3, 0.2, 0.005),
-  new Akadaly(1.5, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(1.8, 0.7, 0.3, 0.3, 0.005),
+new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(1.1, 0.6, 0.2, 0.2, 0.005),
+  new Akadaly(1.4, 0.4, 0.2, 0.2, 0.005),
+  new Akadaly(1.7, 0.8, 0.5, 0.2, 0.005),
+  new Akadaly(2.0, 0.4, 0.5, 0.2, 0.005),
+  new Akadaly(2.7, 0.8, 0.3, 0.2, 0.005),
+  new Akadaly(2.7, 0.4, 0.4, 0.1, 0.005),
+  new Akadaly(3.4, 0.4, 0.4, 0.1, 0.005),
+  new Akadaly(3.5, 0.8, 0.3, 0.1, 0.005),
+  new Akadaly(4.0, 0.7, 0.3, 0.1, 0.005),
+  new Akadaly(4.4, 0.6, 0.3, 0.1, 0.005),
+  new Akadaly(5.0, 0.5, 0.3, 0.3, 0.005),
+  new Akadaly(5.5, 0.6, 0.2, 0.2, 0.005),
+  new Akadaly(6.0, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(6.3, 0.6, 0.2, 0.4, 0.005),
+  new Akadaly(6.6, 0.4, 0.2, 0.6, 0.005),
+  new Akadaly(7.0, 0.7, 1.0, 0.1, 0.005),
+  new Akadaly(7.4, 0.5, 0.6, 0.1, 0.005),
+  new Akadaly(7.8, 0.3, 0.2, 0.1, 0.005),
+  new Akadaly(8.2, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(8.5, 0.7, 0.2, 0.3, 0.005),
+  new Akadaly(8.9, 0.4, 0.2, 0.64, 0.005),
+  new Akadaly(8.9, 0.0, 0.1, 0.26, 0.005),
+  new Akadaly(9.4, 0.4, 0.2, 0.64, 0.005),
+  new Akadaly(9.53, 0.0, 0.1, 0.26, 0.005),
 ];
 
 function setup() {
@@ -48,13 +69,6 @@ function draw() {
   karakter.rajzol();
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
-  // console.log(
-  //  karakter,
-  // holVagyunk(karakter, palya[0]),
-  //  palya[0],
-  //  holVagyunk(karakter, palya[1]),
-  //  palya[1]
-  //  );
 }
 
 function mousePressed() {
@@ -63,7 +77,6 @@ function mousePressed() {
     ugrasiV = -Math.sqrt(2 * g * ugrasiMagassag);
   }
 }
-// kör paraméterei, akadály paraméterei, ütközött e vagy nem return,
 
 function talaj(kar, paly) {
   let rajtaVanE = false;
@@ -83,12 +96,6 @@ function talaj(kar, paly) {
   if (rajtaVanE == false) {
     eredetiY = hossz - karakter.atmero / 2;
   }
-  // console.log(
-  // rajtaVanE,
-  //eredetiY,
-  // karakter.korY,
-  //holVagyunk(karakter, palya[0])
-  //);
 }
 
 function vegeVanE(kar, paly) {
@@ -98,5 +105,3 @@ function vegeVanE(kar, paly) {
     }
   }
 }
-// 48 115
-// az utkozes es a kar-akd az akadalyon belul
