@@ -196,22 +196,23 @@ function draw() {
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
 }
-
+function palyaGeneral() {
+  szam = floor(random(0, 2));
+  let valasztas = palyak[szam];
+  console.log(szam);
+  // let valasztas = random(palyak);
+  for (let i = 0; i < valasztas.length; i = i + 1) {
+    palya.push(valasztas[i]);
+    valasztas[i].akdX = valasztas[i].akdX + szelesseg;
+  }
+}
 function mousePressed() {
   if (karakter.korY >= eredetiY) {
     ugrik = true;
     ugrasiV = -Math.sqrt(2 * g * ugrasiMagassag);
   }
 }
-function palyaGeneral() {
-  szam = floor(random(0,2))
-  let valasztas = palyak[szam]
-  console.log(szam)
-  for (let i = 0; i < valasztas.length; i = i + 1) {
-    palya.push(valasztas[i]);
-    valasztas[i].akdX = valasztas[i].akdX + szelesseg;
-  }
-}
+
 function talaj(kar, paly) {
   let rajtaVanE = false;
   let min = hossz;
