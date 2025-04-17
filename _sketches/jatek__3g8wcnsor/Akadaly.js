@@ -8,6 +8,16 @@ class Akadaly {
     this.v = v * hossz;
   }
 
+  klon() {
+    return new Akadaly(
+      this.akdX / hossz,
+      this.akdY / hossz,
+      this.akdW / hossz,
+      this.akdH / hossz,
+      this.v / hossz
+    );
+  }
+
   rajzol() {
     image(akadalyKep, this.akdX, this.akdY, this.akdW, this.akdH);
   }

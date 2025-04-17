@@ -204,12 +204,12 @@ function mousePressed() {
   }
 }
 function palyaGeneral() {
-  szam = floor(random(0,2))
-  let valasztas = palyak[szam]
-  console.log(szam)
+  szam = floor(random(0, palyak.length));
+  let valasztas = palyak[szam];
+  //console.log(szam);
   for (let i = 0; i < valasztas.length; i = i + 1) {
-    palya.push(valasztas[i]);
-    valasztas[i].akdX = valasztas[i].akdX + szelesseg;
+    palya.push(valasztas[i].klon());
+    palya[palya.length - 1].akdX = palya[palya.length - 1].akdX + szelesseg;
   }
 }
 function talaj(kar, paly) {
