@@ -1,12 +1,16 @@
-let hossz = 400;
-let szelesseg = 1.5 * hossz;
+let magassag = 400;
+let szelesseg = 1.5 * magassag;
 let eredetiY;
 let ugrik = false;
-let ugrasiMagassag = hossz / 3.3;
+let ugrasiMagassag = magassag / 3.3;
 let ugrasiV = 0;
-let g = hossz / 2000;
+let g = magassag / 2000;
 let jatekVege = false;
-let karakter = new Karakter(hossz / 3, hossz - hossz / 16, hossz / 8);
+let karakter = new Karakter(
+  magassag / 3,
+  magassag - magassag / 16,
+  magassag / 8
+);
 let hatterKep, karakterKep, akadalyKep;
 
 function preload() {
@@ -157,8 +161,8 @@ let főpalya = [
 ];
 
 function setup() {
-  createCanvas(szelesseg, hossz);
-  karakter = new Karakter(hossz / 3, hossz - hossz / 16, hossz / 8);
+  createCanvas(szelesseg, magassag);
+  karakter = new Karakter(magassag / 3, magassag - magassag / 16, magassag / 8);
   eredetiY = karakter.korY;
   palyaGeneral();
 }
@@ -167,7 +171,7 @@ function draw() {
   if (jatekVege) {
     textSize(30);
     fill("black");
-    text("Játék vége!", hossz / 3.5, hossz / 1.8);
+    text("Játék vége!", magassag / 3.5, magassag / 1.8);
     return;
   }
   if (palya[palya.length - 1].akdX < szelesseg) {
@@ -214,7 +218,7 @@ function palyaGeneral() {
 }
 function talaj(kar, paly) {
   let rajtaVanE = false;
-  let min = hossz;
+  let min = magassag;
   for (let i = 0; i < paly.length; i = i + 1) {
     if (paly[i].holVagyunk(kar) == "rajta") {
       rajtaVanE = true;
@@ -228,7 +232,7 @@ function talaj(kar, paly) {
   eredetiY = min - kar.atmero / 2;
 
   if (rajtaVanE == false) {
-    eredetiY = hossz - karakter.atmero / 2;
+    eredetiY = magassag - karakter.atmero / 2;
   }
 }
 

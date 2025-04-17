@@ -1,20 +1,20 @@
 // Akadály osztály
 class Akadaly {
   constructor(akdX, akdY, akdW, akdH, v) {
-    this.akdX = akdX * hossz;
-    this.akdY = akdY * hossz;
-    this.akdW = akdW * hossz;
-    this.akdH = akdH * hossz;
-    this.v = v * hossz;
+    this.akdX = akdX * magassag;
+    this.akdY = akdY * magassag;
+    this.akdW = akdW * magassag;
+    this.akdH = akdH * magassag;
+    this.v = v * magassag;
   }
 
   klon() {
     return new Akadaly(
-      this.akdX / hossz,
-      this.akdY / hossz,
-      this.akdW / hossz,
-      this.akdH / hossz,
-      this.v / hossz
+      this.akdX / magassag,
+      this.akdY / magassag,
+      this.akdW / magassag,
+      this.akdH / magassag,
+      this.v / magassag
     );
   }
 
