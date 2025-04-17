@@ -190,6 +190,9 @@ function draw() {
     ugrik = true;
   }
   background(hatterKep);
+  textSize(30);
+  fill("black");
+  text(`Eredmény: ${palya[0].akdX * -1 + kezdoX}`, magassag / 2, magassag / 3);
   for (let i = 0; i < palya.length; i = i + 1) {
     palya[i].mozgat();
     palya[i].rajzol();
