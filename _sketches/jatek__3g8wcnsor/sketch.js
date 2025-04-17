@@ -12,6 +12,7 @@ let karakter = new Karakter(
   magassag / 8
 );
 let hatterKep, karakterKep, akadalyKep;
+let kezdoX = 0;
 
 function preload() {
   hatterKep = loadImage("hatter.png");
@@ -165,13 +166,21 @@ function setup() {
   karakter = new Karakter(magassag / 3, magassag - magassag / 16, magassag / 8);
   eredetiY = karakter.korY;
   palyaGeneral();
+  kezdoX = palya[0].akdX;
 }
 
 function draw() {
   if (jatekVege) {
     textSize(30);
     fill("black");
-    text("Játék vége!", magassag / 3.5, magassag / 1.8);
+    text(
+      `Eredmény: ${palya[0].akdX * -1 + kezdoX}`,
+      magassag / 2,
+      magassag / 3
+    );
+    textSize(30);
+    fill("black");
+    text("Játék vége!", magassag / 2, magassag / 3.8);
     return;
   }
   if (palya[palya.length - 1].akdX < szelesseg) {
@@ -199,6 +208,7 @@ function draw() {
   karakter.rajzol();
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
+  console.log(palya[0].akdX * -1 + kezdoX);
 }
 
 function mousePressed() {
