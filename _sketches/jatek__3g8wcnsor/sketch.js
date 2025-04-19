@@ -174,7 +174,7 @@ function draw() {
     textSize(30);
     fill("black");
     text(
-      `Eredmény: ${palya[0].akdX * -1 + kezdoX}`,
+      `Eredmény: ${palya[0].akdX * -1 + kezdoX - 2}`,
       magassag / 2,
       magassag / 3
     );
@@ -211,7 +211,6 @@ function draw() {
   karakter.rajzol();
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
-  console.log(palya[0].akdX * -1 + kezdoX);
 }
 
 function mousePressed() {
@@ -223,7 +222,6 @@ function mousePressed() {
 function palyaGeneral() {
   szam = floor(random(0, palyak.length));
   let valasztas = palyak[szam];
-  //console.log(szam);
   for (let i = 0; i < valasztas.length; i = i + 1) {
     palya.push(valasztas[i].klon());
     palya[palya.length - 1].akdX = palya[palya.length - 1].akdX + szelesseg;
