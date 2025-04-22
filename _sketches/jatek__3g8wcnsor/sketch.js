@@ -215,13 +215,6 @@ function draw() {
   if (jatekVege) {
     textSize(30);
     fill("black");
-    text(
-      `Eredmény: ${palya[0].akdX * -1 + kezdoX - 2}`,
-      magassag / 2,
-      magassag / 9
-    );
-    textSize(30);
-    fill("black");
     text("Játék vége!", magassag / 2, magassag / 3.8);
     return;
   }

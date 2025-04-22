@@ -19,14 +19,14 @@ function preload() {
   karakterKep = loadImage("karakter.png");
   akadalyKep = loadImage("akadaly.png");
 }
-let palya0=[ 
+let palya0 = [
   new Akadaly(1, 0.8, 1.2, 0.3, 0.005),
   new Akadaly(1, 0.4, 0.3, 0.15, 0.005),
   new Akadaly(1, 0, 0.5, 0.2, 0.005),
   new Akadaly(1.6, 0.55, 0.6, 0.05, 0.005),
   new Akadaly(2, 0.3, 0.2, 0.05, 0.005),
   new Akadaly(1.5, 0, 0.7, 0.1, 0.005),
-  ]
+];
 
 let palya1 = [
   new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
@@ -122,65 +122,65 @@ let palya10 = [
   new Akadaly(1.9, 0.3, 0.3, 0.1, 0.005),
   new Akadaly(2.4, 0.65, 0.3, 0.1, 0.005),
 ];
-let palya11=[
+let palya11 = [
   new Akadaly(1, 0.9, 0.4, 0.1, 0.005),
   new Akadaly(1.3, 0.8, 0.4, 0.4, 0.005),
   new Akadaly(1.7, 0.6, 0.5, 0.5, 0.005),
   new Akadaly(1.9, 0, 0.3, 0.4, 0.005),
   new Akadaly(2.6, 0.5, 0.5, 0.1, 0.005),
-  new Akadaly(2.2, 0.8, 0.3, 0.2, 0.005),]
-              
-  //-3,5 
-let palya12 =  [ 
+  new Akadaly(2.2, 0.8, 0.3, 0.2, 0.005),
+];
+
+//-3,5
+let palya12 = [
   new Akadaly(1, 0.5, 0.2, 0.2, 0.005),
   new Akadaly(1.8, 0, 0.2, 0.35, 0.005),
   new Akadaly(1.8, 0.55, 0.45, 0.45, 0.005),
   new Akadaly(1.5, 0.8, 0.3, 0.2, 0.005),
   new Akadaly(2.25, 0.3, 0.25, 0.7, 0.005),
   new Akadaly(2.25, 0, 0.2, 0.1, 0.005),
-    ]
-  // -6
-  let palya13= [
+];
+// -6
+let palya13 = [
   new Akadaly(0.8, 0.7, 0.2, 0.3, 0.005),
   new Akadaly(0.8, 0.0, 0.2, 0.56, 0.005),
-  new Akadaly(1, 0.8, 0.4, 0.2, 0.005)]
-  //-6,4
-let palya14 = [ 
+  new Akadaly(1, 0.8, 0.4, 0.2, 0.005),
+];
+//-6,4
+let palya14 = [
   new Akadaly(1, 0.7, 0.2, 0.3, 0.005),
   new Akadaly(1.4, 0.7, 0.2, 0.3, 0.005),
   new Akadaly(1.9, 0.7, 0.2, 0.3, 0.005),
   new Akadaly(2.2, 0.15, 0.3, 0.3, 0.005),
   new Akadaly(2.5, 0.75, 0.1, 0.25, 0.005),
-  new Akadaly(2,6, 0.3, 0.3, 0.2, 0.005),
+  new Akadaly(2, 6, 0.3, 0.3, 0.2, 0.005),
   new Akadaly(2.95, 0.75, 0.2, 0.25, 0.005),
   new Akadaly(3.25, 0.6, 0.2, 0.4, 0.005),
   new Akadaly(3.55, 0.5, 0.2, 0.5, 0.005),
 ];
 //
-let palya15=[
+let palya15 = [
   new Akadaly(0.8, 0.7, 0.2, 0.3, 0.005),
   new Akadaly(0.8, 0.0, 0.2, 0.56, 0.005),
   new Akadaly(1.0, 0.8, 0.4, 0.2, 0.005),
   new Akadaly(1.4, 0.5, 0.2, 0.5, 0.005),
   new Akadaly(1.8, 0.5, 0.2, 0.5, 0.005),
-    ]
-  //
-let palya16=[
+];
+//
+let palya16 = [
   new Akadaly(1, 0.7, 0.2, 0.3, 0.005),
   new Akadaly(1.3, 0.15, 0.3, 0.3, 0.005),
   new Akadaly(1.6, 0.75, 0.1, 0.25, 0.005),
-]
-let palya17=[
+];
+let palya17 = [
   new Akadaly(1, 0.3, 0.3, 0.2, 0.005),
   new Akadaly(1.35, 0.75, 0.2, 0.25, 0.005),
   new Akadaly(1.65, 0.6, 0.2, 0.4, 0.005),
   new Akadaly(1.95, 0.5, 0.2, 0.5, 0.005),
-]
+];
 //
 
-let pelda=[
-  14, 10, 
-]
+let pelda = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 let palyak = [
   palya0,
@@ -201,7 +201,6 @@ let palyak = [
   palya15,
   palya16,
   palya17,
-  
 ];
 let palya = [];
 
@@ -227,7 +226,7 @@ function draw() {
     text("Játék vége!", magassag / 2, magassag / 3.8);
     return;
   }
-  if (palya[palya.length - 1].akdX < szelesseg) { 
+  if (palya[palya.length - 1].akdX < szelesseg) {
     palyaGeneral();
   }
   if (palya[0].akdX == 240) {
@@ -240,7 +239,6 @@ function draw() {
   for (let i = 0; i < palya.length; i = i + 1) {
     palya[i].mozgat();
     palya[i].rajzol();
- 
   }
   if (ugrik) {
     karakter.korY += ugrasiV;
@@ -265,12 +263,18 @@ function mousePressed() {
   }
 }
 function palyaGeneral() {
- let szam = floor(random(0, palyak.length));
-       console.log(szam)
+  let szam;
+  if (pelda.length == 0) {
+    szam = floor(random(0, palyak.length));
+  } else {
+    szam = pelda.shift();
+  }
+  console.log(szam);
   let valasztas = palyak[szam];
   for (let i = 0; i < valasztas.length; i = i + 1) {
     palya.push(valasztas[i].klon());
-    palya[palya.length - 1].akdX = palya[palya.length - 1].akdX + szelesseg;  }
+    palya[palya.length - 1].akdX = palya[palya.length - 1].akdX + szelesseg;
+  }
 }
 function talaj(kar, paly) {
   let rajtaVanE = false;
