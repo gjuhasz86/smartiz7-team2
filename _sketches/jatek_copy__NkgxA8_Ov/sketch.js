@@ -168,19 +168,20 @@ let palya15 = [
 ];
 //
 let palya16 = [
-  new Akadaly(1, 0.7, 0.2, 0.3, 0.005),
-  new Akadaly(1.3, 0.15, 0.3, 0.3, 0.005),
+  new Akadaly(1, 0.75, 0.2, 0.35, 0.005),
+  new Akadaly(1.3, 0.5, 0.15, 0.1, 0.005),
   new Akadaly(1.6, 0.75, 0.1, 0.25, 0.005),
 ];
 let palya17 = [
   new Akadaly(1, 0.3, 0.3, 0.2, 0.005),
   new Akadaly(1.35, 0.75, 0.2, 0.25, 0.005),
   new Akadaly(1.65, 0.6, 0.2, 0.4, 0.005),
-  new Akadaly(1.95, 0.5, 0.2, 0.5, 0.005),
+  new Akadaly(1.95, 0.5, 0.25, 0.5, 0.005),
 ];
+
 //
 
-let pelda = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+let pelda = [16];
 
 let palyak = [
   palya0,
@@ -214,6 +215,8 @@ function setup() {
 
 function draw() {
   if (jatekVege) {
+    fill("lightblue");
+    rect(magassag / 2 - 2, magassag / 40, 260, 120);
     textSize(30);
     fill("black");
     text(
@@ -233,9 +236,7 @@ function draw() {
     ugrik = true;
   }
   background(hatterKep);
-  textSize(30);
-  fill("black");
-  text(`Eredmény: ${palya[0].akdX * -1 + kezdoX}`, magassag / 2, magassag / 9);
+
   for (let i = 0; i < palya.length; i = i + 1) {
     palya[i].mozgat();
     palya[i].rajzol();
@@ -254,6 +255,9 @@ function draw() {
   karakter.rajzol();
   talaj(karakter, palya);
   vegeVanE(karakter, palya);
+  textSize(30);
+  fill("black");
+  text(`Eredmény: ${palya[0].akdX * -1 + kezdoX}`, magassag / 2, magassag / 9);
 }
 
 function mousePressed() {

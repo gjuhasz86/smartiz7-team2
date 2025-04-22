@@ -32,7 +32,7 @@ class Akadaly {
       kar.also() > this.akdY &&
       kar.felso() < this.akdY + this.akdH
     ) {
-      return false;
+      return true;
     } else {
       return false;
     }
