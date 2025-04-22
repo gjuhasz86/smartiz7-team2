@@ -116,15 +116,7 @@ let palya10 = [
 ];
 
 let palyak = [
-  palya1,
-  palya2,
-  palya3,
-  palya4,
-  palya5,
-  palya6,
-  palya7,
-  palya8,
-  palya9,
+  palya10
 ];
 let palya = [];
 
