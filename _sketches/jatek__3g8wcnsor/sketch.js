@@ -27,6 +27,11 @@ let palya1 = [
   new Akadaly(1.7, 0.8, 0.5, 0.2, 0.005),
   new Akadaly(2.0, 0.4, 0.5, 0.2, 0.005),
   new Akadaly(2.7, 0.8, 0.3, 0.2, 0.005),
+  new Akadaly(2.7, 0.4, 0.4, 0.1, 0.005),
+  new Akadaly(3.4, 0.4, 0.4, 0.1, 0.005),
+  new Akadaly(3.5, 0.8, 0.3, 0.1, 0.005),
+  new Akadaly(4.0, 0.7, 0.3, 0.1, 0.005),
+  new Akadaly(4.4, 0.6, 0.3, 0.1, 0.005),
 ];
 let palya2 = [
   new Akadaly(1.0, 0.8, 0.3, 0.2, 0.005),
@@ -35,131 +40,93 @@ let palya2 = [
   new Akadaly(2.5, 0.4, 0.3, 0.3, 0.005),
   new Akadaly(3.0, 0.8, 0.2, 0.2, 0.005),
 ];
-let palyak = [palya1, palya2];
-let palya = [];
-
-let főpalya = [
-  new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(1.1, 0.6, 0.2, 0.2, 0.005),
-  new Akadaly(1.4, 0.4, 0.2, 0.2, 0.005),
-  new Akadaly(1.7, 0.8, 0.5, 0.2, 0.005),
-  new Akadaly(2.0, 0.4, 0.5, 0.2, 0.005),
-  new Akadaly(2.7, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(2.7, 0.4, 0.4, 0.1, 0.005),
-  new Akadaly(3.4, 0.4, 0.4, 0.1, 0.005),
-  new Akadaly(3.5, 0.8, 0.3, 0.1, 0.005),
-  new Akadaly(4.0, 0.7, 0.3, 0.1, 0.005),
-  new Akadaly(4.4, 0.6, 0.3, 0.1, 0.005),
-  new Akadaly(5.0, 0.5, 0.3, 0.3, 0.005),
-  new Akadaly(5.5, 0.6, 0.2, 0.2, 0.005),
-  new Akadaly(6.0, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(6.3, 0.6, 0.2, 0.4, 0.005),
-  new Akadaly(6.6, 0.4, 0.2, 0.6, 0.005),
-  new Akadaly(7.0, 0.7, 1.0, 0.1, 0.005),
-  new Akadaly(7.4, 0.5, 0.6, 0.1, 0.005),
-  new Akadaly(7.8, 0.3, 0.2, 0.1, 0.005),
-  new Akadaly(8.2, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(8.5, 0.7, 0.2, 0.3, 0.005),
-  new Akadaly(8.9, 0.4, 0.2, 0.64, 0.005),
-  new Akadaly(8.9, 0.0, 0.1, 0.26, 0.005),
-  new Akadaly(9.4, 0.4, 0.2, 0.64, 0.005),
-  new Akadaly(9.53, 0.0, 0.1, 0.26, 0.005),
-  new Akadaly(9.7, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(10.1, 0.5, 0.2, 0.3, 0.005),
-  new Akadaly(10.4, 0.6, 0.4, 0.2, 0.005),
-  new Akadaly(10.9, 0.4, 0.3, 0.3, 0.005),
-  new Akadaly(11.4, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(11.7, 0.6, 0.4, 0.1, 0.005),
-  new Akadaly(12.2, 0.7, 0.5, 0.1, 0.005),
-  new Akadaly(12.8, 0.5, 0.2, 0.3, 0.005),
-  new Akadaly(13.4, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(13.8, 0.6, 0.2, 0.2, 0.005),
-  new Akadaly(14.3, 0.5, 0.3, 0.3, 0.005),
-  new Akadaly(14.8, 0.6, 0.2, 0.3, 0.005),
-  new Akadaly(15.2, 0.7, 0.8, 0.1, 0.005),
-  new Akadaly(16.0, 0.4, 0.3, 0.2, 0.005),
-  new Akadaly(16.4, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(16.8, 0.6, 0.3, 0.3, 0.005),
-  new Akadaly(17.4, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(17.9, 0.6, 0.3, 0.2, 0.005),
-  new Akadaly(18.3, 0.5, 0.2, 0.3, 0.005),
-  new Akadaly(18.7, 0.4, 0.4, 0.2, 0.005),
-  new Akadaly(19.2, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(19.5, 0.5, 0.2, 0.2, 0.005),
-  new Akadaly(19.9, 0.4, 0.3, 0.1, 0.005),
-  new Akadaly(20.4, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(20.9, 0.6, 0.4, 0.1, 0.005),
-  new Akadaly(21.3, 0.4, 0.2, 0.4, 0.005),
-  new Akadaly(21.7, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(22.1, 0.6, 0.3, 0.3, 0.005),
-  new Akadaly(22.6, 0.4, 0.3, 0.2, 0.005),
-  new Akadaly(22.9, 0.8, 0.5, 0.1, 0.005),
-  new Akadaly(23.4, 0.7, 0.3, 0.1, 0.005),
-  new Akadaly(24.0, 0.5, 0.3, 0.2, 0.005),
-  new Akadaly(24.4, 0.4, 0.2, 0.6, 0.005),
-  new Akadaly(25.0, 0.7, 0.3, 0.3, 0.005),
-  new Akadaly(25.5, 0.5, 0.3, 0.3, 0.005),
-  new Akadaly(25.9, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(26.3, 0.6, 0.2, 0.4, 0.005),
-  new Akadaly(26.6, 0.5, 0.2, 0.4, 0.005),
-  new Akadaly(26.9, 0.3, 0.4, 0.3, 0.005),
-  new Akadaly(27.4, 0.5, 0.2, 0.2, 0.005),
-  new Akadaly(27.8, 0.4, 0.3, 0.3, 0.005),
-  new Akadaly(28.3, 0.8, 0.4, 0.2, 0.005),
-  new Akadaly(28.8, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(29.4, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(29.9, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(30.5, 0.7, 0.3, 0.3, 0.005),
-  new Akadaly(30.9, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(31.3, 0.6, 0.2, 0.3, 0.005),
-  new Akadaly(31.7, 0.4, 0.2, 0.3, 0.005),
-  new Akadaly(32.0, 0.7, 0.3, 0.2, 0.005),
-  new Akadaly(32.4, 0.5, 0.2, 0.3, 0.005),
-  new Akadaly(32.8, 0.4, 0.2, 0.4, 0.005),
-  new Akadaly(33.3, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(33.7, 0.6, 0.3, 0.2, 0.005),
-  new Akadaly(34.1, 0.5, 0.2, 0.2, 0.005),
-  new Akadaly(34.5, 0.4, 0.3, 0.2, 0.005),
-  new Akadaly(35.0, 0.7, 0.3, 0.2, 0.005),
-  new Akadaly(35.4, 0.6, 0.2, 0.2, 0.005),
-  new Akadaly(35.9, 0.5, 0.2, 0.3, 0.005),
-  new Akadaly(36.3, 0.3, 0.2, 0.4, 0.005),
-  new Akadaly(36.7, 0.5, 0.3, 0.3, 0.005),
-  new Akadaly(37.1, 0.6, 0.2, 0.3, 0.005),
-  new Akadaly(37.5, 0.7, 0.4, 0.2, 0.005),
-  new Akadaly(38.0, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(38.6, 0.8, 0.2, 0.2, 0.005),
-  new Akadaly(39.0, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(39.4, 0.7, 0.3, 0.2, 0.005),
-  new Akadaly(39.9, 0.6, 0.3, 0.2, 0.005),
-  new Akadaly(40.3, 0.5, 0.2, 0.3, 0.005),
-  new Akadaly(40.7, 0.4, 0.2, 0.3, 0.005),
-  new Akadaly(41.2, 0.5, 0.3, 0.3, 0.005),
-  new Akadaly(42.4, 0.4, 0.2, 0.3, 0.005),
-  new Akadaly(42.9, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(43.4, 0.7, 0.3, 0.2, 0.005),
-  new Akadaly(43.9, 0.5, 0.3, 0.3, 0.005),
-  new Akadaly(44.5, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(44.5, 0.6, 0.3, 0.2, 0.005),
-  new Akadaly(44.9, 0.6, 0.2, 0.3, 0.005),
-  new Akadaly(45.3, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(45.8, 0.6, 0.3, 0.2, 0.005),
-  new Akadaly(46.3, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(46.8, 0.7, 0.3, 0.2, 0.005),
-  new Akadaly(47.3, 0.6, 0.2, 0.2, 0.005),
-  new Akadaly(47.8, 0.7, 0.3, 0.2, 0.005),
-  new Akadaly(48.3, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(48.8, 0.6, 0.3, 0.2, 0.005),
-  new Akadaly(49.3, 0.7, 0.3, 0.2, 0.005),
-  new Akadaly(49.8, 0.6, 0.3, 0.2, 0.005),
-  new Akadaly(50.3, 0.5, 0.2, 0.3, 0.005),
-  new Akadaly(50.8, 0.4, 0.3, 0.3, 0.005),
-  new Akadaly(51.3, 0.7, 0.3, 0.2, 0.005),
-  new Akadaly(51.8, 0.8, 0.3, 0.2, 0.005),
-  new Akadaly(52.3, 0.6, 0.3, 0.2, 0.005),
-  new Akadaly(52.8, 0.5, 0.2, 0.3, 0.005),
-  new Akadaly(53.3, 0.4, 0.2, 0.3, 0.005),
+let palya3 = [
+  new Akadaly(0.8, 0.7, 0.2, 0.3, 0.005),
+  new Akadaly(0.8, 0.0, 0.2, 0.56, 0.005),
+  new Akadaly(1.0, 0.8, 0.4, 0.2, 0.005),
+  new Akadaly(1.4, 0.5, 0.2, 0.5, 0.005),
+  new Akadaly(1.8, 0.5, 0.2, 0.5, 0.005),
+  new Akadaly(2.3, 0.7, 0.2, 0.3, 0.005),
+  new Akadaly(2.6, 0.15, 0.3, 0.3, 0.005),
+  new Akadaly(2.9, 0.75, 0.1, 0.25, 0.005),
+  new Akadaly(3.0, 0.3, 0.3, 0.2, 0.005),
+  new Akadaly(3.35, 0.75, 0.2, 0.25, 0.005),
+  new Akadaly(3.65, 0.6, 0.2, 0.4, 0.005),
+  new Akadaly(3.95, 0.5, 0.2, 0.5, 0.005),
 ];
+let palya4 = [
+  new Akadaly(0.8, 0.9, 0.3, 0.1, 0.005),
+  new Akadaly(1.1, 0.7, 0.3, 0.1, 0.005),
+  new Akadaly(1.4, 0.5, 0.3, 0.1, 0.005),
+  new Akadaly(1.7, 0.3, 0.3, 0.1, 0.005),
+  new Akadaly(2.25, 0.5, 0.3, 0.1, 0.005),
+  new Akadaly(2.8, 0.7, 0.3, 0.1, 0.005),
+  new Akadaly(3.35, 0.9, 0.3, 0.1, 0.005),
+];
+
+let palya5 = [
+  new Akadaly(0.8, 0.9, 1.0, 0.1, 0.005),
+  new Akadaly(1.1, 0.7, 0.7, 0.1, 0.005),
+  new Akadaly(1.4, 0.5, 0.4, 0.1, 0.005),
+  new Akadaly(1.7, 0.3, 0.1, 0.1, 0.005),
+];
+
+let palya6 = [
+  new Akadaly(0.8, 0.7, 0.2, 0.3, 0.005),
+  new Akadaly(1.2, 0.5, 0.2, 0.5, 0.005),
+  new Akadaly(1.6, 0.3, 0.2, 0.7, 0.005),
+];
+
+let palya7 = [
+  new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(1.15, 0.5, 0.2, 0.2, 0.005),
+  new Akadaly(1.5, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(1.9, 0.5, 0.2, 0.2, 0.005),
+  new Akadaly(2.2, 0.2, 0.2, 0.8, 0.005),
+];
+let palya8 = [
+  new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(1.1, 0.7, 0.2, 0.3, 0.005),
+  new Akadaly(1.5, 0.4, 0.2, 0.64, 0.005),
+  new Akadaly(1.5, 0.0, 0.1, 0.26, 0.005),
+  new Akadaly(2.0, 0.4, 0.2, 0.64, 0.005),
+  new Akadaly(2.13, 0.0, 0.1, 0.26, 0.005),
+];
+
+let palya9 = [
+  new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+  new Akadaly(1.1, 0.6, 0.4, 0.1, 0.005),
+  new Akadaly(1.7, 0.4, 0.4, 0.1, 0.005),
+  new Akadaly(2.3, 0.5, 0.2, 0.5, 0.005),
+  new Akadaly(2.7, 0.2, 0.1, 0.1, 0.005),
+  new Akadaly(3.0, 0.3, 0.1, 0.1, 0.005),
+  new Akadaly(3.3, 0.4, 0.1, 0.1, 0.005),
+  new Akadaly(3.6, 0.5, 0.1, 0.1, 0.005),
+  new Akadaly(3.9, 0.6, 0.1, 0.1, 0.005),
+  new Akadaly(4.2, 0.7, 0.1, 0.1, 0.005),
+  new Akadaly(4.5, 0.8, 0.1, 0.1, 0.005),
+];
+
+let palya10 = [
+  new Akadaly(0.8, 0.8, 0.3, 0.1, 0.005),
+  new Akadaly(1.3, 0.55, 0.3, 0.1, 0.005),
+  new Akadaly(1.8, 0.85, 0.3, 0.1, 0.005),
+  new Akadaly(1.9, 0.3, 0.3, 0.1, 0.005),
+  new Akadaly(2.4, 0.65, 0.3, 0.1, 0.005),
+];
+
+let palyak = [
+  palya1,
+  palya2,
+  palya3,
+  palya4,
+  palya5,
+  palya6,
+  palya7,
+  palya8,
+  palya9,
+];
+let palya = [];
 
 function setup() {
   createCanvas(szelesseg, magassag);
@@ -176,7 +143,7 @@ function draw() {
     text(
       `Eredmény: ${palya[0].akdX * -1 + kezdoX - 2}`,
       magassag / 2,
-      magassag / 3
+      magassag / 9
     );
     textSize(30);
     fill("black");
@@ -192,7 +159,7 @@ function draw() {
   background(hatterKep);
   textSize(30);
   fill("black");
-  text(`Eredmény: ${palya[0].akdX * -1 + kezdoX}`, magassag / 2, magassag / 3);
+  text(`Eredmény: ${palya[0].akdX * -1 + kezdoX}`, magassag / 2, magassag / 9);
   for (let i = 0; i < palya.length; i = i + 1) {
     palya[i].mozgat();
     palya[i].rajzol();
