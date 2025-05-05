@@ -307,3 +307,4 @@ function vegeVanE(kar, paly) {
     }
   }
 }
+//b 11-14
