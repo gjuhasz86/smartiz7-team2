@@ -24,8 +24,8 @@ let palya0 = [
   new Akadaly(1, 0.4, 0.3, 0.15, 0.005),
   new Akadaly(1, 0, 0.5, 0.2, 0.005),
   new Akadaly(1.6, 0.55, 0.6, 0.05, 0.005),
-  new Akadaly(2, 0.3, 0.2, 0.05, 0.005),
   new Akadaly(1.5, 0, 0.7, 0.1, 0.005),
+  new Akadaly(2, 0.3, 0.2, 0.05, 0.005),
 ];
 
 let palya1 = [
@@ -127,8 +127,8 @@ let palya11 = [
   new Akadaly(1.3, 0.8, 0.4, 0.4, 0.005),
   new Akadaly(1.7, 0.6, 0.5, 0.5, 0.005),
   new Akadaly(1.9, 0, 0.3, 0.4, 0.005),
-  new Akadaly(2.6, 0.5, 0.5, 0.1, 0.005),
   new Akadaly(2.2, 0.8, 0.3, 0.2, 0.005),
+  new Akadaly(2.6, 0.5, 0.5, 0.1, 0.005),
 ];
 
 //-3,5
@@ -181,7 +181,7 @@ let palya17 = [
 
 //
 
-let pelda = [];
+let pelda =[9];
 
 let palyak = [
   palya0,
@@ -308,3 +308,4 @@ function vegeVanE(kar, paly) {
   }
 }
 //b 11-14
+// a + akd.w valtozo akadalyonkent!
