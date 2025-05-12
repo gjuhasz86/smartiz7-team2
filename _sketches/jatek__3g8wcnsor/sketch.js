@@ -146,7 +146,7 @@ let palya13 = [
   new Akadaly(0.8, 0.0, 0.2, 0.56, 0.005),
   new Akadaly(1, 0.8, 0.4, 0.2, 0.005),
 ];
-//...........
+//-6,4
 let palya14 = [
   new Akadaly(1, 0.7, 0.2, 0.3, 0.005),
   new Akadaly(1.4, 0.7, 0.2, 0.3, 0.005),
@@ -166,7 +166,7 @@ let palya15 = [
   new Akadaly(1.4, 0.5, 0.2, 0.5, 0.005),
   new Akadaly(1.8, 0.5, 0.2, 0.5, 0.005),
 ];
-//........
+//
 let palya16 = [
   new Akadaly(1, 0.75, 0.2, 0.35, 0.005),
   new Akadaly(1.3, 0.5, 0.15, 0.1, 0.005),
@@ -181,7 +181,7 @@ let palya17 = [
 
 //
 
-let pelda = [];
+let pelda = [11,9];
 
 let palyak = [
   palya0,
@@ -307,3 +307,4 @@ function vegeVanE(kar, paly) {
     }
   }
 }
+//b 11-14

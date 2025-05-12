@@ -181,7 +181,7 @@ let palya17 = [
 
 //
 
-let pelda = [16];
+let pelda = [];
 
 let palyak = [
   palya0,
