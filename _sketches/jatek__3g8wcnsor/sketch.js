@@ -178,10 +178,14 @@ let palya17 = [
   new Akadaly(1.65, 0.6, 0.2, 0.4, 0.005),
   new Akadaly(1.95, 0.5, 0.25, 0.5, 0.005),
 ];
+let palya18 = [
+  new Akadaly(0.0, 0.8, 0.4, 0.2, 0.005),
+  new Akadaly(1, 0, 0.1, 0.1, 0.005),
+];
 
 //
 
-let pelda = [16,0];
+let pelda = [18, 18, 18, 18, 18, 18];
 
 let palyak = [
   palya0,
@@ -202,6 +206,7 @@ let palyak = [
   palya15,
   palya16,
   palya17,
+  palya18,
 ];
 let palya = [];
 
@@ -250,7 +255,8 @@ function draw() {
       ugrik = false;
     }
   } else if (karakter.korY < eredetiY) {
-    karakter.korY += 5;
+    ugrasiV += g;
+    karakter.korY += ugrasiV;
   }
   karakter.rajzol();
   talaj(karakter, palya);
@@ -277,7 +283,8 @@ function palyaGeneral() {
   let valasztas = palyak[szam];
   for (let i = 0; i < valasztas.length; i = i + 1) {
     palya.push(valasztas[i].klon());
-    palya[palya.length - 1].akdX = palya[palya.length - 1].akdX + szelesseg+palya[palya.length - 1].akdW;
+    palya[palya.length - 1].akdX =
+      palya[palya.length - 1].akdX + szelesseg + palya[palya.length - 1].akdW;
   }
 }
 function talaj(kar, paly) {

@@ -4,7 +4,7 @@ let eredetiY;
 let ugrik = false;
 let ugrasiMagassag = magassag / 3.3;
 let ugrasiV = 0;
-let g = magassag / 2000;
+let g = magassag / 10000;
 let jatekVege = false;
 let karakter = new Karakter(
   magassag / 3,
@@ -178,10 +178,14 @@ let palya17 = [
   new Akadaly(1.65, 0.6, 0.2, 0.4, 0.005),
   new Akadaly(1.95, 0.5, 0.25, 0.5, 0.005),
 ];
+let palya18 = [
+  new Akadaly(0.0, 0.8, 0.4, 0.2, 0.005),
+  new Akadaly(1, 0, 0.1, 0.1, 0.005),
+];
 
 //
 
-let pelda =[9];
+let pelda = [18, 18, 18, 18, 18,18,18,18,18];
 
 let palyak = [
   palya0,
@@ -202,6 +206,7 @@ let palyak = [
   palya15,
   palya16,
   palya17,
+  palya18,
 ];
 let palya = [];
 
