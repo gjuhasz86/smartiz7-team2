@@ -182,10 +182,16 @@ let palya18 = [
   new Akadaly(0.0, 0.8, 0.4, 0.2, 0.005),
   new Akadaly(1, 0, 0.1, 0.1, 0.005),
 ];
+let palya19 = [
+  new Akadaly(0.0, 0.8, 0.4, 0.2, 0.005),
+  new Akadaly(0.4, 0.6, 0.4, 0.2, 0.005),
+  new Akadaly(0.8, 0.4, 0.4, 0.2, 0.005),
+  // new Akadaly(1.2, 0.35, 0.05, 0.05, 0.005),
+  new Akadaly(0.8, 0.9, 1, 0.1, 0.005),
+  new Akadaly(2, 0, 0.1, 0.1, 0.005),
+];
 
-//
-
-let pelda = [18, 18, 18, 18, 18, 18];
+let pelda = [19, 19, 19, 19, 19, 19];
 
 let palyak = [
   palya0,
@@ -207,6 +213,7 @@ let palyak = [
   palya16,
   palya17,
   palya18,
+  palya19,
 ];
 let palya = [];
 

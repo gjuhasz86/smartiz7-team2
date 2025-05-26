@@ -4,7 +4,7 @@ let eredetiY;
 let ugrik = false;
 let ugrasiMagassag = magassag / 3.3;
 let ugrasiV = 0;
-let g = magassag / 10000;
+let g = magassag / 2000;
 let jatekVege = false;
 let karakter = new Karakter(
   magassag / 3,
@@ -185,7 +185,7 @@ let palya18 = [
 
 //
 
-let pelda = [18, 18, 18, 18, 18,18,18,18,18];
+let pelda = [];
 
 let palyak = [
   palya0,
@@ -207,6 +207,7 @@ let palyak = [
   palya16,
   palya17,
   palya18,
+
 ];
 let palya = [];
 
@@ -249,6 +250,7 @@ function draw() {
   if (ugrik) {
     karakter.korY += ugrasiV;
     ugrasiV += g;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     if (karakter.korY >= eredetiY) {
       karakter.korY = eredetiY;
       ugrasiV = 0;
