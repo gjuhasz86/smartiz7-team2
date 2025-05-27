@@ -285,6 +285,7 @@ function palyaGeneral() {
   for (let i = 0; i < valasztas.length; i = i + 1) {
     palya.push(valasztas[i].klon());
     palya[palya.length - 1].akdX = palya[palya.length - 1].akdX + szelesseg;
+    // utcso elem szelessege valt.
   }
 }
 function talaj(kar, paly) {

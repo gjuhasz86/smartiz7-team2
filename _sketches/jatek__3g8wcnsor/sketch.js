@@ -190,8 +190,16 @@ let palya19 = [
   new Akadaly(0.8, 0.9, 1, 0.1, 0.005),
   new Akadaly(2, 0, 0.1, 0.1, 0.005),
 ];
+let palya20 =[
+   new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+   new Akadaly(1.2, 0.8, 0.2, 0.2, 0.005),
+   new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+   new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+   new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+   new Akadaly(0.8, 0.8, 0.2, 0.2, 0.005),
+]
 
-let pelda = [19, 19, 19, 19, 19, 19];
+let pelda = [1];
 
 let palyak = [
   palya0,
@@ -214,6 +222,7 @@ let palyak = [
   palya17,
   palya18,
   palya19,
+  palya20,
 ];
 let palya = [];
 
@@ -291,7 +300,7 @@ function palyaGeneral() {
   for (let i = 0; i < valasztas.length; i = i + 1) {
     palya.push(valasztas[i].klon());
     palya[palya.length - 1].akdX =
-      palya[palya.length - 1].akdX + szelesseg + palya[palya.length - 1].akdW;
+      palya[palya.length - 1].akdX + szelesseg;
   }
 }
 function talaj(kar, paly) {
